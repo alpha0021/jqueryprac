@@ -13,10 +13,14 @@
 
 		<script>
 			(function(){
+				var link = $('link');
 				$("button").click(function(){
-					var stylesheet = $(this).data('file'); // this refers to the button
+					var $this = $(this);
+					var stylesheet = $this.data('file'); // this refers to the button
 					//console.log(stylesheet);
-					$('link').attr('href',stylesheet + '.css');
+					$(this).siblings('button').removeAttr('disabled');
+					link.attr('href',stylesheet + '.css');
+					$this.attr('disabled','disabled');
 				});
 
 			})();
