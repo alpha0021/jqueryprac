@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event practise 1</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="day.css">
+</head>
+<body>
+	<h1>My Website</h1>
+		<button data-file="day">day</button>
+		<button data-file="night">night</button>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script>
+			(function(){
+				$("button").click(function(){
+					var stylesheet = $(this).data('file'); // this refers to the button
+					//console.log(stylesheet);
+					$('link').attr('href',stylesheet + '.css');
+				});
+
+			})();
+		</script>
+</body>
+</html>
